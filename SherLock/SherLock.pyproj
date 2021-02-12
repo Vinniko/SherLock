@@ -21,7 +21,46 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Connections\DataBaseConnection.py" />
+    <Compile Include="Exceptions\FileNotExistsException.py" />
+    <Compile Include="Interfaces\IConnection.py" />
+    <Compile Include="Interfaces\IGuardian.py" />
+    <Compile Include="Interfaces\ILogger.py" />
+    <Compile Include="Interfaces\IModel.py" />
+    <Compile Include="Interfaces\IObservable.py" />
+    <Compile Include="Interfaces\IObserver.py" />
+    <Compile Include="Interfaces\IParser.py" />
+    <Compile Include="Interfaces\IListener.py" />
+    <Compile Include="Interfaces\IReader.py" />
+    <Compile Include="Interfaces\IWriter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ConfigModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\DataBaseWriter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\FileReader.py" />
+    <Compile Include="Services\Guardian.py" />
+    <Compile Include="Services\JSONParser.py" />
+    <Compile Include="Services\Loger.py" />
+    <Compile Include="Services\SocketListener.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SherLock.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Connections\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Configs\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configs\Configs.json" />
+    <Content Include="Connections\Connections.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
