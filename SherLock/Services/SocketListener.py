@@ -1,22 +1,26 @@
 from Interfaces.IListener import IListener
 from Interfaces.IObservable import IObservable
 import socket
+import threading
 
 class SocketListener(IListener, IObservable):
 
     def __init__(self, configModel):
-        __configModel = configModel
+        self.__configModel = configModel
 
 
     def Listen(self, port):
-        while(true):
+        while(True):
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-                sock.bind((self.__host, port))
+                sock.bind((self.__host, int(port)))
                 sock.listen()
                 conn, addr = sock.accept()
-                for ip in __configModel.RemovedIps:
-                    if(ip != addr[0]):
-                        NotifyObservers(addr)
+                addr += (port,)
+                with self.__lock:
+                    for ip in self.__configModel.RemovedIps:
+                        if(ip == addr[0]):
+                            continue
+                    self.NotifyObservers(addr)
 
     
 
@@ -45,5 +49,7 @@ class SocketListener(IListener, IObservable):
 
     __host = "127.0.0.1"
     __configModel = 0
+    __observers = list()
+    __lock = threading.Lock()
 
 

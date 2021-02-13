@@ -1,4 +1,4 @@
 {
   "removedIps": [],
-  "usingPorts": []
+  "usingPorts": [ "8000", "49677" ]
 }

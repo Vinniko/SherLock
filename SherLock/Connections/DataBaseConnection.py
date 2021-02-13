@@ -19,6 +19,7 @@ class DataBaseConnection(IConnection):
         else:
             raise FileNotExistsException(self.__fileErrorString)
         self.__connection = pymysql.connect(host=self.__dataBaseHost, database=self.__dataBaseName, user=self.__dataBaseUser, password=self.__dataBasePassword, port=int(self.__dataBasePort))
+        self.__connection.autocommit_mode = True
 
     @property
     def Connection(self):

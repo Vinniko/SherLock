@@ -1,7 +1,7 @@
 {
-  "DataBaseName": "",
-  "DataBaseUser": "",
-  "DataBasePassword": "",
+  "DataBaseName": "sherlock",
+  "DataBaseUser": "root",
+  "DataBasePassword": "123456789q",
   "DataBaseHost": "localhost",
-  "DataBasePort": "5432"
+  "DataBasePort": "3306"
 }

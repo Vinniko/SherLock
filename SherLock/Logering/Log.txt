@@ -1,0 +1,5 @@
+
+2021-02-13 14:03:15.377276: 'ConfigModel' object has no attribute '_ConfigModel__filePath'
+2021-02-13 14:07:35.962987: 'SocketListener' object has no attribute '_SocketListener__observers'
+2021-02-13 14:32:26.414611: 'DataBaseConnection' object has no attribute '_connection'
+2021-02-13 14:33:04.544923: 'DataBaseConnection' object has no attribute '_connection'

@@ -24,4 +24,3 @@ for port in configModel.UsingPorts:
     threadings.append(threading.Thread(target=socketListener.Listen, args=(port,)))
 for thread in threadings:
     thread.start()
-    thread.join()

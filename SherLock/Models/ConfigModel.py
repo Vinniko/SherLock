@@ -34,5 +34,6 @@ class ConfigModel(IModel):
     __removedIps = list()
     __usingPorts = list()
     __fileReader = 0
+    __filePath = os.path.dirname(os.path.abspath(__file__)).replace("Models", "Configs") + "/Configs.json"
 
 
