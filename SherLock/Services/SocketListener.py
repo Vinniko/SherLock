@@ -20,7 +20,7 @@ class SocketListener(IListener, IObservable):
                     for ip in self.__configModel.RemovedIps:
                         if(ip == addr[0]):
                             continue
-                    self.NotifyObservers(addr)
+                        self.NotifyObservers(addr)
 
     
 
