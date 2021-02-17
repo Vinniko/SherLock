@@ -2,6 +2,6 @@
   "DataBaseName": "likholetov_data",
   "DataBaseUser": "likholetov_data",
   "DataBasePassword": "jUCjBRSs1!",
-  "DataBaseHost": "database.likholetov.beget.tech",
+  "DataBaseHost": "likholetov.beget.tech",
   "DataBasePort": "3306"
 }
