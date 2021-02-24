@@ -10,16 +10,18 @@ class SocketListener(IListener, IObservable):
 
 
     def Listen(self, port):
-        while(True):
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-                sock.bind((self.__host, int(port)))
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.bind((self.__host, int(port)))
+            while(True):
                 sock.listen()
                 conn, addr = sock.accept()
                 addr += (port,)
                 with self.__lock:
+                    flag = True
                     for ip in self.__configModel.RemovedIps:
                         if(ip == addr[0]):
-                            continue
+                            flag = False
+                    if(flag):
                         self.NotifyObservers(addr)
 
     
