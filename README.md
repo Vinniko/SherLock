@@ -5,6 +5,8 @@
 Необходимые пакеты для работы скрипта:
 >python3 (apt-get install python3)
 
+>pip3 (apt-get install python3-pip)
+
 >pymysql (pip install pymysql)
 
 Файл Connections/Connections.json содержит в себе реквизиты для подключения скрипта к базе 
